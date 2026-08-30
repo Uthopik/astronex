@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro-Nex</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 20px;
+
+      /* IMAGEN 0: Fondo general de la web */
+      background-image: url('img/astronex.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Enlace flotante (Enlace 7) */
+    .enlace-superior {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 8px 16px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Contenedor central principal */
+    .contenedor-central {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* IMAGEN 1: Cabecera superior */
+    .imagen-1 {
+      width: 100%;
+      height: 180px;
+      background-image: url('img/astronex1.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* IMAGEN 2: Fondo que agrupa a I3 hasta I8 */
+    .imagen-2 {
+      width: 100%;
+      padding: 15px;
+      background-image: url('imagen2.jpg');
+      background-size: cover;
+      background-position: center;
+      
+      /* Rejilla de 2 columnas para I3 a I8 */
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      gap: 15px;
+    }
+
+    /* Estilo base para cada tarjeta interna (I3, I4, I5, I6, I7, I8) */
+    .tarjeta {
+      min-height: 230px; /* En lugar de height: 230px */
+      height: auto;      /* Permite que si el texto es muy grande, la tarjeta crezca según lo necesite */
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      border-radius: 4px;
+      background-size: cover;
+      background-position: center;
+      color: #ffff00; /* Texto en blanco */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Sombra para legibilidad */
+    }
+
+    /* Asignación individual de imágenes para I3 a I8 */
+    .card-3 { background-image: url('img/windows.png'); }
+    .card-4 { background-image: url('img/windows.png'); }
+    .card-5 { background-image: url('img/linux.png'); }
+    .card-6 { background-image: url('img/linux.png'); }
+    .card-7 { background-image: url('img/macos.png'); }
+    .card-8 { background-image: url('img/github.png'); }
+
+    /* Textos dentro de las tarjetas */
+    .tarjeta h3 {
+      font-size: 2.0rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .tarjeta p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Botones/Enlaces de descarga o externos */
+    .btn-enlace {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #ffff00;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: none; /* Quita la sombra en el texto del botón */
+    }
+
+    .btn-enlace:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    /* Configuración especial para pantallas de móvil (hasta 768px de ancho) */
+    @media (max-width: 768px) {
+  
+      /* Hace que el contenedor central ocupe casi todo el ancho disponible */
+      .contenedor-central {
+        width: 95%;
+        max-width: 100%;
+      }
+
+      /* Convierte la rejilla de 2 columnas en 1 sola columna en el móvil */
+      .imagen-2 {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+
+      /* Ajusta el enlace flotante para que no estorbe en pantallas pequeñas */
+      .enlace-superior {
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 0 auto 15px auto;
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Enlace 7 (arriba a la derecha) -->
+  <a href="Index2.html" class="enlace-superior">Español</a>
+
+  <!-- Bloque central -->
+  <div class="contenedor-central">
+    
+    <!-- Imagen 1 -->
+    <div class="imagen-1"></div>
+
+    <!-- Imagen 2 (Contenedora) -->
+    <div class="imagen-2">
+      
+      <!-- Imagen 3 -->
+      <div class="tarjeta card-3">
+        <h3>Windows</h3>
+        <p>Windows Installer</p>
+        <a href="https://github.com/Uthopik/astronex-python-3/releases/download/v2.1/Astro-Nex-Dark-v2.1-setup.exe" download class="btn-enlace">Download</a>
+      </div>
+
+      <!-- Imagen 4 -->
+      <div class="tarjeta card-4">
+        <h3>Windows</h3>
+        <p>Portable Version</p>
+        <a href="https://github.com/Uthopik/astronex-python-3/releases/download/v2.1/Astro-Nex-Portable.exe" class="btn-enlace">Download</a>
+      </div>
+
+      <!-- Imagen 5 -->
+      <div class="tarjeta card-5">
+        <h3>Linux</h3>
+        <p>AppImage Version</p>
+        <a href="https://github.com/Uthopik/astronex-python-3/releases/download/v2.1/Astro-Nex-Dark-v2.1.AppImage" download class="btn-enlace">Download</a>
+      </div>
+
+      <!-- Imagen 6 -->
+      <div class="tarjeta card-6">
+        <h3>Linux</h3>
+        <p>.deb (Debian based)</p>
+        <a href="https://github.com/Uthopik/astronex-python-3/releases/download/v2.1/astro-nex-dark-v2.1.deb" class="btn-enlace">Download</a>
+      </div>
+
+      <!-- Imagen 7 -->
+      <div class="tarjeta card-7">
+        <h3>macOS</h3>
+        <p>.dmg (ARM)</p>
+        <a href="https://github.com/Uthopik/astronex-python-3/releases/download/v2.1/Astro-Nex-Dark-v2.1-arm64.dmg" download class="btn-enlace">Download</a>
+      </div>
+
+      <!-- Imagen 8 -->
+      <div class="tarjeta card-8">
+        <h3>Source Code</h3>
+        <p>Github</p>
+        <a href="https://github.com/Uthopik/astronex-python-3" class="btn-enlace">Go</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
